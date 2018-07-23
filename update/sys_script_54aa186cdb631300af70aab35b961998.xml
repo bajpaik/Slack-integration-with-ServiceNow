@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition>current.priority.changesTo(1)</condition>
+        <description>to create a REST Message , and run this message using Business rule to message the #general channel (in SLACK) that an incident has been created</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>REST Message SLACK incident creation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+try { 
+ var r = new sn_ws.RESTMessageV2('x_80370_slack_inte.run REST Message using BR', 'POST Method');
+ r.setStringParameterNoEscape('requested_by', current.caller_id.name);
+ r.setStringParameterNoEscape('username', 'Lab3.0');
+ r.setStringParameterNoEscape('number', current.number);
+ r.setStringParameterNoEscape('short_description', current.short_description);
+ r.setStringParameterNoEscape('url', 'https://' + gs.getProperty('instance_name') + '.service-now.com/nav_to.do?uri=incident.do?sysparm_query=number=' + current.number);
+ r.setStringParameterNoEscape('title', 'New Priority ' + current.priority + ' Incident has been created');
+
+//override authentication profile 
+//authentication type ='basic'/ 'oauth2'
+//r.setAuthentication(authentication type, profile name);
+
+//set a MID server name if one wants to run the message on MID
+//r.setMIDServer('MY_MID_SERVER');
+
+//if the message is configured to communicate through ECC queue, either
+//by setting a MID server or calling executeAsync, one needs to set skip_sensor
+//to true. Otherwise, one may get an intermittent error that the response body is null
+//r.setEccParameter('skip_sensor', true);
+
+ var response = r.execute();
+ var responseBody = response.getBody();
+ var httpStatus = response.getStatusCode();
+}
+catch(ex) {
+ var message = ex.getMessage();
+}
+	// Add your code here
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-23 13:36:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>54aa186cdb631300af70aab35b961998</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>REST Message SLACK incident creation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
+        <sys_update_name>sys_script_54aa186cdb631300af70aab35b961998</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-23 13:53:17</sys_updated_on>
+        <template/>
+        <when>async</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=54aa186cdb631300af70aab35b961998"/>
+</record_update>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Default GET</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>run REST Message using BR [ Default GET ]</qualified_name>
+        <rest_endpoint>https://hooks.slack.com/services/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</rest_endpoint>
+        <rest_message display_value="run REST Message using BR">3df65ce8db631300af70aab35b9619e8</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-23 13:07:33</sys_created_on>
+        <sys_id>d638106cdb631300af70aab35b961908</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default GET</sys_name>
+        <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
+        <sys_update_name>sys_rest_message_fn_d638106cdb631300af70aab35b961908</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-23 13:07:33</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>
