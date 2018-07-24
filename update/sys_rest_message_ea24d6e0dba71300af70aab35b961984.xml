@@ -6,23 +6,23 @@
         <basic_auth_password/>
         <basic_auth_profile/>
         <basic_auth_user/>
-        <description>The goal of lab 3.0 is to create a new REST Message and run this message using a Business Rule to message the #general channel that an Incident has been created.</description>
-        <name>run REST Message using BR</name>
+        <description>The goal of lab 4.0 is to create and close Slack group using REST Messages so when a priority 1 is submitted a new channel is group is created and when this Incident is resolved this group will be archived. New field will be created on the Incident table to store the group's Slack identifier, this ID will be received from the payload response when the REST Message is sent.</description>
+        <name>Create and close Slack group using REST </name>
         <oauth2_profile/>
         <protocol_name/>
-        <rest_endpoint>https://hooks.slack.com/services/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</rest_endpoint>
+        <rest_endpoint>https://bajpaik.slack.com/api/groups.create</rest_endpoint>
         <sys_class_name>sys_rest_message</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-07-23 13:07:33</sys_created_on>
-        <sys_id>3df65ce8db631300af70aab35b9619e8</sys_id>
+        <sys_created_on>2018-07-23 22:23:23</sys_created_on>
+        <sys_id>ea24d6e0dba71300af70aab35b961984</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_name>run REST Message using BR</sys_name>
+        <sys_name>Create and close Slack group using REST </sys_name>
         <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
         <sys_policy/>
         <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
-        <sys_update_name>sys_rest_message_3df65ce8db631300af70aab35b9619e8</sys_update_name>
+        <sys_update_name>sys_rest_message_ea24d6e0dba71300af70aab35b961984</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-07-23 22:21:44</sys_updated_on>
+        <sys_updated_on>2018-07-23 22:45:55</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mutual_auth>false</use_mutual_auth>
     </sys_rest_message>

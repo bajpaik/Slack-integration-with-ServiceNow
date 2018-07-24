@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_param_defs">
+    <sys_rest_message_fn_param_defs action="INSERT_OR_UPDATE">
+        <name>name</name>
+        <order>100</order>
+        <rest_message_function display_value="POST Lab4">155cdee4dba71300af70aab35b961939</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_param_defs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-23 22:48:11</sys_created_on>
+        <sys_id>b0dc1624dba71300af70aab35b961922</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>name</sys_name>
+        <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
+        <sys_update_name>sys_rest_message_fn_param_defs_b0dc1624dba71300af70aab35b961922</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-23 22:48:11</sys_updated_on>
+        <value>${name}</value>
+    </sys_rest_message_fn_param_defs>
+</record_update>

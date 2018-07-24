@@ -2,19 +2,19 @@
 <record_update table="sys_rest_message_headers">
     <sys_rest_message_headers action="INSERT_OR_UPDATE">
         <name>Accept</name>
-        <rest_message display_value="slack integration with ServiceNow">793e44e4db631300af70aab35b9619db</rest_message>
+        <rest_message display_value="Create and close Slack group using REST ">ea24d6e0dba71300af70aab35b961984</rest_message>
         <sys_class_name>sys_rest_message_headers</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-07-23 12:26:37</sys_created_on>
-        <sys_id>0b3e48a4db631300af70aab35b9619d1</sys_id>
+        <sys_created_on>2018-07-23 22:23:23</sys_created_on>
+        <sys_id>dd34d2e0dba71300af70aab35b9619ec</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Accept</sys_name>
         <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
         <sys_policy/>
         <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
-        <sys_update_name>sys_rest_message_headers_0b3e48a4db631300af70aab35b9619d1</sys_update_name>
+        <sys_update_name>sys_rest_message_headers_dd34d2e0dba71300af70aab35b9619ec</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-07-23 12:26:37</sys_updated_on>
+        <sys_updated_on>2018-07-23 22:23:23</sys_updated_on>
         <value>application/json</value>
     </sys_rest_message_headers>
 </record_update>

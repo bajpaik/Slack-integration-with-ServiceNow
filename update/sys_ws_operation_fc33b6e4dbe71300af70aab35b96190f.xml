@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_80370_slack_inte/post_message_from_slack_to_servicenow/reply</default_operation_uri>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>reply</name>
+        <operation_script><![CDATA[//NOTE: Make sure you change the tenth line (user.addQuery('x_...') with the new field created from lab 5.
+(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+var slack_user = request.queryParams.user_name[0];
+var slack_channel = request.queryParams.channel_id[0];
+var text = request.queryParams.text[0];
+var response_url = request.queryParams.response_url[0];
+var JSON = new global.JSON();
+var responseText = '';
+var user = new GlideRecord('incident');
+user.addQuery('x_80370_slack_inte_slack_id', slack_channel);
+user.query();
+if(user.next()){
+user.work_notes = 'From Slack user ' + slack_user + ':\n' + text;
+user.update();
+responseText = "Incident has been updated";
+}
+else
+responseText = 'Incident does not exist';
+var returnObj = {
+"response_type": "ephemeral",
+"text": responseText
+};
+
+response.setContentType('application/json');
+response.getStreamWriter().writeString(JSON.encode(returnObj));
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_80370_slack_inte/v1/post_message_from_slack_to_servicenow/reply</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/reply</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-24 00:29:24</sys_created_on>
+        <sys_id>fc33b6e4dbe71300af70aab35b96190f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>reply</sys_name>
+        <sys_package display_value="Slack Integration" source="x_80370_slack_inte">afec88acdb231300af70aab35b961917</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Slack Integration">afec88acdb231300af70aab35b961917</sys_scope>
+        <sys_update_name>sys_ws_operation_fc33b6e4dbe71300af70aab35b96190f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-24 06:50:06</sys_updated_on>
+        <web_service_definition display_value="Post message from Slack to ServiceNow">1b82fea4dbe71300af70aab35b9619b3</web_service_definition>
+        <web_service_version display_value="v1">bc237ee0dbe71300af70aab35b9619e5</web_service_version>
+    </sys_ws_operation>
+</record_update>
